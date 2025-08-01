@@ -1,1 +1,124 @@
 # Projeto-web-
+@@ -0,0 +1,122 @@
+<%@ Page Language="VB" AutoEventWireup="false" CodeBehind="Default.aspx.vb" Inherits="ProjetoWeb.Default" %>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Usuário</h1>
+        <form id="formCadastro" runat="server">
+            <div>
+                <label for="txtNome">Nome:</label>
+                <input type="text" id="txtNome" runat="server" required />
+            </div>
+            <div>
+                <label for="txtEmail">E-mail:</label>
+                <input type="email" id="txtEmail" runat="server" required />
+            </div>
+            <div>
+                <label for="txtSenha">Senha:</label>
+                <input type="password" id="txtSenha" runat="server" required />
+            </div>
+            <div>
+                <button type="submit" runat="server" OnClick="btnCadastrar_Click">Cadastrar</button>
+            </div>
+        </form>
+        <div id="mensagem" runat="server"></div>
+    </div>
+</body>
+</html>
+Imports System.Web.UI
+
+Namespace ProjetoWeb
+    Public Class Default
+        Inherits Page
+
+        Protected Sub btnCadastrar_Click(sender As Object, e As EventArgs)
+            ' Recupera os dados do formulário
+            Dim nome As String = txtNome.Value
+            Dim email As String = txtEmail.Value
+            Dim senha As String = txtSenha.Value
+
+            ' Lógica simples para verificar se os campos estão preenchidos
+            If String.IsNullOrEmpty(nome) OrElse String.IsNullOrEmpty(email) OrElse String.IsNullOrEmpty(senha) Then
+                mensagem.InnerHtml = "<p style='color: red;'>Todos os campos são obrigatórios!</p>"
+            Else
+                ' Aqui você pode adicionar lógica de banco de dados, se necessário
+                mensagem.InnerHtml = "<p style='color: green;'>Cadastro realizado com sucesso!</p>"
+            End If
+        End Sub
+    End Class
+End Namespace
+/* Resetando alguns estilos básicos */
+body, div, form {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilizando o corpo da página */
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+form div {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#mensagem {
+    margin-top: 10px;
+}
