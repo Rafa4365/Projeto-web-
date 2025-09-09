@@ -4,21 +4,7 @@
 
 Projeto simples em **ASP.NET Web Forms (VB.NET)** para cadastro de usuários com integração ao **SQL Server**.
 
----
 
-## 📂 Estrutura
-
-ProjetoWeb/
-│
-├── ProjetoWeb.sln
-├── ProjetoWeb/
-│   ├── Cadastro.aspx
-│   ├── Cadastro.aspx.vb
-│   ├── Web.config
-│   └── README.md
-<%@ Page Language="VB" AutoEventWireup="false" CodeBehind="Cadastro.aspx.vb" Inherits="ProjetoWeb.Cadastro" %>
-
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Cadastro de Usuário</title>
@@ -69,19 +55,6 @@ ProjetoWeb/
     <pages controlRenderingCompatibilityVersion="4.0"/>
   </system.web>
 </configuration>
-CREATE DATABASE ProjetoWebDB;
-GO
-
-USE ProjetoWebDB;
-GO
-
-CREATE TABLE Usuarios (
-    Id INT PRIMARY KEY IDENTITY,
-    Nome NVARCHAR(100) NOT NULL,
-    Email NVARCHAR(100) NOT NULL UNIQUE,
-    Senha NVARCHAR(100) NOT NULL
-);
-
 
 
 
