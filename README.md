@@ -1,9 +1,4 @@
-# Projeto-web-
-
-# ProjetoWeb - Cadastro de Usuário
-
-Projeto simples em **ASP.NET Web Forms (VB.NET)** para cadastro de usuários com integração ao **SQL Server**.
-
+# - Cadastro de Usuário
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -43,7 +38,7 @@ Projeto simples em **ASP.NET Web Forms (VB.NET)** para cadastro de usuários com
     </form>
 </body>
 </html>
-<?xml version="1.0"?>
+
 <configuration>
   <connectionStrings>
     <add name="ConexaoDB"
