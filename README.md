@@ -1,6 +1,5 @@
 # Projeto-web-
-@@ -0,0 +1,122 @@
-<%@ Page Language="VB" AutoEventWireup="false" CodeBehind="Default.aspx.vb" Inherits="ProjetoWeb.Default" %>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
